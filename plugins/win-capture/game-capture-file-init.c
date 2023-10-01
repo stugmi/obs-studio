@@ -132,12 +132,12 @@ static LSTATUS get_reg(HKEY hkey, LPCWSTR sub_key, LPCWSTR value_name, bool b64)
 	return status;
 }
 
-#define get_programdata_path(path, subpath)                        \
-	do {                                                       \
+#define get_programdata_path(path, subpath)                 \
+	do {                                                \
 		SHGetFolderPathW(NULL, CSIDL_WINDOWS, NULL, \
-				 SHGFP_TYPE_CURRENT, path);        \
-		StringCbCatW(path, sizeof(path), L"\\");           \
-		StringCbCatW(path, sizeof(path), subpath);         \
+				 SHGFP_TYPE_CURRENT, path); \
+		StringCbCatW(path, sizeof(path), L"\\");    \
+		StringCbCatW(path, sizeof(path), subpath);  \
 	} while (false)
 
 #define make_filename(str, name, ext)                                \
